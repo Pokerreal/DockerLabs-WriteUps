@@ -5,5 +5,5 @@ En este repositorio almacenaré todas las máquinas que vaya resolviendo de esta
 ## Estructura
 
 - **README.md**: Descripción general.
-- **Nombre_maquina.md/**: En estos archivos podréis consultar la resolución de la máquina correspondiente.
+- **Nombre_maquina.md**: En estos archivos podréis consultar la resolución de la máquina correspondiente.
 
